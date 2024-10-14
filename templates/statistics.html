@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Statistics</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .stat {
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+            background: #e3f2fd;
+        }
+        .stat p {
+            margin: 0;
+            font-size: 1.2em;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>User Statistics</h1>
+        <div class="stat">
+            <p><strong>Total Users:</strong> {{ total_users }}</p>
+        </div>
+        <div class="stat">
+            <p><strong>Average BMI:</strong> {{ average_bmi|round(2) }}</p>
+        </div>
+        <div class="stat">
+            <p><strong>Underweight Users:</strong> {{ underweight_count }}</p>
+        </div>
+        <div class="stat">
+            <p><strong>Normal Users:</strong> {{ normal_count }}</p>
+        </div>
+        <div class="stat">
+            <p><strong>Overweight Users:</strong> {{ overweight_count }}</p>
+        </div>
+        <div class="stat">
+            <p><strong>Obese Users:</strong> {{ obese_count }}</p>
+        </div>
+    </div>
+    <div class="footer">
+        <p>&copy; {{ current_year }} Your BMI Calculator</p>
+    </div>
+</body>
+</html>

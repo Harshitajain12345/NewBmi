@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - BMI Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body style="background-color: #e0f7fa; font-family: Arial, sans-serif; margin: 0; padding: 0;">
+
+    <div style="max-width: 800px; margin: auto; padding: 20px; background-color: #ffffff; border-radius: 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);">
+        <h1 style="font-size: 36px; color: #007bff; margin-bottom: 20px; text-align: center; text-transform: uppercase;">About Us</h1>
+        
+        <div style="text-align: center; margin-bottom: 20px;">
+            <img src="{{ url_for('static', filename='BMI.jpg') }}" alt="BMI" class="about-image">
+        </div>
+
+        <nav style="display: flex; justify-content: center; flex-wrap: wrap; margin-bottom: 20px;">
+            <a href="/" class="nav-button">Home</a>
+            <a href="/about" class="nav-button">About</a>
+            <a href="/contact" class="nav-button">Contact</a>
+        </nav>
+        
+        <p style="font-size: 16px; line-height: 1.6; color: #333;">Welcome to our BMI Calculator app! Our mission is to help you maintain a healthy lifestyle by providing easy-to-use tools for calculating and understanding your Body Mass Index (BMI).</p>
+
+        <div style="margin-top: 20px; padding: 15px; border-left: 5px solid #ff6b6b; background-color: #f9f9f9; border-radius: 6px;">
+            <h2 style="font-size: 24px; color: #ff6b6b; margin-bottom: 10px;">What is BMI?</h2>
+            <p style="font-size: 16px; line-height: 1.6; color: #333;">BMI, or Body Mass Index, is a measurement that helps assess whether your weight is in a healthy range based on your height. It is a useful tool to understand your weight status and potential health risks.</p>
+        </div>
+
+        <div style="margin-top: 20px; padding: 15px; border-left: 5px solid #ffc107; background-color: #f9f9f9; border-radius: 6px;">
+            <h2 style="font-size: 24px; color: #ffc107; margin-bottom: 10px;">Why use our BMI Calculator?</h2>
+            <p style="font-size: 16px; line-height: 1.6; color: #333;">Our BMI Calculator provides not only a calculation of your BMI but also personalized recommendations. Whether you're underweight, overweight, or obese, our app will guide you with customized diet and exercise plans to help you achieve your health goals.</p>
+        </div>
+
+        <div style="margin-top: 20px; padding: 15px; border-left: 5px solid #28a745; background-color: #f9f9f9; border-radius: 6px;">
+            <h2 style="font-size: 24px; color: #28a745; margin-bottom: 10px;">Our Vision</h2>
+            <p style="font-size: 16px; line-height: 1.6; color: #333;">We believe in promoting health and wellness for all. Our personalized approach aims to provide recommendations that are practical, easy to follow, and tailored to your specific BMI category.</p>
+        </div>
+    </div>
+
+    <style>
+        nav {
+            margin-bottom: 20px;
+        }
+
+        .nav-button {
+            display: inline-block; /* Ensure buttons stack correctly */
+            margin: 5px; /* Add some space between buttons */
+            padding: 10px 15px; /* Add padding for button size */
+            background-color: #007bff; /* Button background color */
+            color: white; /* Button text color */
+            text-decoration: none; /* Remove underline */
+            border-radius: 5px; /* Rounded corners */
+            font-size: 16px; /* Font size */
+            transition: background-color 0.3s, color 0.3s; /* Transition for hover effect */
+        }
+
+        .nav-button:hover {
+            background-color: #0056b3; /* Darker background on hover */
+            color: #ffffff; /* White text on hover */
+        }
+
+        .about-image {
+            max-width: 70%; /* Set a more manageable width */
+            max-height: 300px; /* Limit the height */
+            width: auto; /* Maintain aspect ratio */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a shadow for depth */
+            margin: 20px 0; /* Add margin for spacing */
+        }
+    </style>
+</body>
+</html>

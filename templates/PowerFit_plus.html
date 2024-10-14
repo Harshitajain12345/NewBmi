@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Subscription - BMI Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body style="background-color: #5d7fa1; font-family: Arial, sans-serif; padding: 20px;">
+
+    <div style="max-width: 1200px; margin: auto; text-align: center;">
+        <h1 style="font-size: 40px; color: #2c0aa7b1; margin-bottom: 20px;">Premium Subscription</h1>
+
+        <!-- Pricing Plan Container -->
+        <div class="pricing-container">
+
+            <!-- 1 Month Plan -->
+            <div class="pricing-plan basic-plan">
+                <h2 style="color: #28a745;">1 Month Plan</h2>
+                <p style="font-size: 16px;">Price: <strong>₹499</strong></p>
+                <ul>
+                    <li>1 Month Personalized Diet Plan</li>
+                    <li>Access to Exclusive Diet Recipes</li>
+                    <li>Weekly Progress Check</li>
+                </ul>
+                <button class="subscribe-btn">Subscribe Now</button>
+            </div>
+
+            <!-- 3 Month Plan -->
+            <div class="pricing-plan standard-plan">
+                <h2 style="color: #ff6b6b;">3 Month Plan</h2>
+                <p style="font-size: 16px;">Price: <strong>₹1299</strong></p>
+                <ul>
+                    <li>3 Months Personalized Diet Plan</li>
+                    <li>Access to All Premium Diet Charts</li>
+                    <li>Weekly Progress Check with Reports</li>
+                    <li>Email Support</li>
+                </ul>
+                <button class="subscribe-btn">Subscribe Now</button>
+            </div>
+
+            <!-- Premium Plan -->
+            <div class="pricing-plan premium-plan">
+                <h2 style="color: #ffc107;">Premium Plan</h2>
+                <p style="font-size: 16px;">Price: <strong>₹2499</strong></p>
+                <ul>
+                    <li>Personalized Diet & Exercise Plan</li>
+                    <li>Access to Certified Trainers</li>
+                    <li>Daily Check-ins & Feedback</li>
+                    <li>24/7 Premium Support</li>
+                    <li>Exclusive Video Sessions with Trainers</li>
+                </ul>
+                <button class="subscribe-btn">Subscribe Now</button>
+            </div>
+
+        </div>
+    </div>
+
+    <style>
+        .pricing-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
+
+        .pricing-plan {
+            background-color: white;
+            border-radius: 12px;
+            padding: 20px;
+            width: 30%;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .pricing-plan:hover {
+            transform: translateY(-10px);
+        }
+
+        .pricing-plan h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .pricing-plan ul {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+
+        .pricing-plan ul li {
+            background-color: #f9f9f9;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 6px;
+        }
+
+        .subscribe-btn {
+            padding: 12px 24px;
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+        }
+
+        /* Hover Effect for Buttons */
+        .subscribe-btn:hover {
+            background-color: #0056b3;
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Different Colors for Each Plan */
+        .basic-plan {
+            border-left: 5px solid #28a745;
+        }
+
+        .standard-plan {
+            border-left: 5px solid #ff6b6b;
+        }
+
+        .premium-plan {
+            border-left: 5px solid #ffc107;
+        }
+
+        /* Navigation Bar Hover Effects */
+        nav a {
+            text-decoration: none;
+            color: #007bff;
+            font-size: 18px;
+            margin: 0 15px;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #007bff; /* Background color on hover */
+            color: #fff; /* White text on hover */
+        }
+    </style>
+
+</body>
+</html>

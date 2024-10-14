@@ -1,0 +1,195 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #fffcf9, #d5e1df); /* Soft pastel gradient */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+    position: relative; /* Position for stickers */
+}
+
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    font-size: 48px; /* Larger font size */
+    color: #ff6b6b; /* Warm pink color */
+    margin-bottom: 20px;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7);
+}
+
+nav {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    margin: 0 15px;
+    padding: 10px 20px;
+    background-color: #007bff; /* Button color */
+    border-radius: 50px; /* Rounded buttons */
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+nav a:hover {
+    background-color: #ff6b6b; /* Change background on hover */
+    transform: scale(1.05); /* Slightly grow button */
+}
+
+form {
+    margin-bottom: 30px;
+}
+
+form label {
+    font-size: 18px;
+    margin: 15px 0;
+    display: block;
+    color: #333;
+}
+
+form input {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 2px solid #ccc;
+    border-radius: 12px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+form input:focus {
+    border-color: #ff6b6b; /* Focus border color */
+    box-shadow: 0 0 5px rgba(255, 107, 107, 0.5); /* Subtle glow effect */
+}
+
+button {
+    padding: 12px 25px;
+    background-color: #28a745; /* Green button */
+    color: white;
+    font-size: 20px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* Chart Button */
+.chart-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #ffcc00; /* Yellow button */
+    color: #333;
+    text-decoration: none;
+    font-size: 20px;
+    border-radius: 12px;
+    margin-top: 20px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.chart-btn:hover {
+    background-color: #e6b800; /* Darker yellow on hover */
+    transform: scale(1.05);
+}
+
+/* Diet and Exercise Charts */
+.diet-chart {
+    list-style-type: none;
+    margin: 20px 0;
+}
+
+.diet-chart li {
+    margin: 10px 0;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-left: 8px solid #007bff;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.diet-chart li:hover {
+    transform: scale(1.02); /* Slightly lift on hover */
+}
+
+.yoga-chart {
+    list-style-type: none;
+    margin: 20px 0;
+}
+
+.yoga-chart li {
+    margin: 10px 0;
+    padding: 15px;
+    background-color: #e9ecef;
+    border-left: 8px solid #28a745;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.yoga-chart li:hover {
+    transform: scale(1.02); /* Slightly lift on hover */
+}
+
+/* Different Colors for Different Charts */
+.underweight-diet {
+    border-left-color: #ff6b6b; /* Underweight color */
+}
+
+.overweight-diet {
+    border-left-color: #ffc107; /* Overweight color */
+}
+
+.obese-diet {
+    border-left-color: #dc3545; /* Obese color */
+}
+
+.underweight-exercise {
+    border-left-color: #17a2b8; /* Underweight exercise color */
+}
+
+.overweight-exercise {
+    border-left-color: #fd7e14; /* Overweight exercise color */
+}
+
+.obese-exercise {
+    border-left-color: #6f42c1; /* Obese exercise color */
+}
+
+/* Stickers */
+.sticker {
+    position: absolute;
+    width: 60px; /* Adjust size as needed */
+    opacity: 0.9; /* Slight transparency */
+}
+
+.sticker-1 { top: 20px; right: 20px; }
+.sticker-2 { bottom: 20px; left: 20px; }
+.sticker-3 { top: 50px; left: 50px; }
+
+

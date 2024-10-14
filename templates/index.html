@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>BMI Calculator</h1>
+        
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/contact">Contact</a>
+            <a href="/PowerFit_plus" class="special-btn">PowerFit Plus</a> <!-- New PowerFit Plus Button -->
+        </nav>
+        
+        <form action="/calculate" method="POST">
+            <label for="age">Age:</label>
+            <input type="number" name="age" id="age" required>
+
+            <label for="height">Height (cm):</label>
+            <input type="number" name="height" id="height" required>
+
+            <label for="weight">Weight (kg):</label>
+            <input type="number" name="weight" id="weight" required>
+
+            <button type="submit">Calculate BMI</button>
+        </form>
+
+        {% if bmi %}
+            <div class="result">
+                <h2>Your BMI: {{ bmi|round(2) }}</h2>
+                <p>You are classified as: <strong>{{ category }}</strong></p>
+                <p>{{ message }}</p>
+
+                {% if chart_button %}
+                    <a href="/personalized-chart/{{ category }}" class="chart-btn">Get Your Personalized Diet & Exercise Plan</a>
+                {% endif %}
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

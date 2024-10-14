@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+            background-color: #007bff;
+            color: white;
+        }
+        td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        .status-icon {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        .normal { background-color: green; }
+        .overweight { background-color: yellow; }
+        .obese { background-color: red; }
+        .underweight { background-color: pink; }
+        .no-users {
+            text-align: center;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Users List</h1>
+        {% if users %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Age</th>
+                        <th>Height (cm)</th>
+                        <th>Weight (kg)</th>
+                        <th>BMI</th>
+                        <th>Category</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in users %}
+                    <tr>
+                        <td>{{ user.id }}</td>
+                        <td>{{ user.age }}</td>
+                        <td>{{ user.height }}</td>
+                        <td>{{ user.weight }}</td>
+                        <td>{{ user.bmi }}</td>
+                        <td>
+                            <span class="status-icon 
+                                {% if user.category == 'Normal' %}normal{% endif %}
+                                {% if user.category == 'Overweight' %}overweight{% endif %}
+                                {% if user.category == 'Obese' %}obese{% endif %}
+                                {% if user.category == 'Underweight' %}underweight{% endif %}
+                            "></span>
+                            {{ user.category }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p class="no-users">No users found.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
