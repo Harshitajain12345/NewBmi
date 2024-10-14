@@ -105,51 +105,48 @@ def statistics():
 def PowerFit_plus():
     return render_template('PowerFit_plus.html')
 
-
 @app.route('/personalized-chart/<category>')
 def personalized_chart(category):
-    if category == "Underweight":
-        chart = """
-        <h3>Underweight Diet Chart:</h3>
-        <ul class="diet-chart underweight-diet">
-            <li>Increase calorie intake with nutrient-dense foods.</li>
-            <li>Include more proteins like eggs, chicken, fish, and legumes.</li>
-            <li>Consume healthy fats like avocado, nuts, seeds, and olive oil.</li>
-        </ul>
-        <h3>Underweight Exercise Chart:</h3>
-        <ul class="yoga-chart underweight-exercise">
-            <li class="asana asana1"><strong>Vrikshasana (Tree Pose):</strong> Helps improve balance and stability.</li>
-            <li class="asana asana2"><strong>Bhujangasana (Cobra Pose):</strong> Strengthens the spine and reduces stress.</li>
-        </ul>
-        """
-    elif category == "Overweight":
-        chart = """
-        <h3>Overweight Diet Chart:</h3>
-        <ul class="diet-chart overweight-diet">
-            <li>Focus on portion control and avoid overeating.</li>
-            <li>Include more fiber-rich foods like vegetables, fruits, and whole grains.</li>
-        </ul>
-        <h3>Overweight Exercise Chart:</h3>
-        <ul class="yoga-chart overweight-exercise">
-            <li class="asana asana3"><strong>Trikonasana (Triangle Pose):</strong> Reduces fat and strengthens muscles.</li>
-            <li class="asana asana4"><strong>Surya Namaskar (Sun Salutation):</strong> Enhances metabolism and burns calories.</li>
-        </ul>
-        """
-    elif category == "Obese":
-        chart = """
-        <h3>Obese Diet Chart:</h3>
-        <ul class="diet-chart obese-diet">
-            <li>Focus on a balanced, low-calorie diet with lean proteins and vegetables.</li>
-            <li>Limit processed foods, sugary drinks, and fried foods.</li>
-        </ul>
-        <h3>Obese Exercise Chart:</h3>
-        <ul class="yoga-chart obese-exercise">
-            <li class="asana asana5"><strong>Virabhadrasana (Warrior Pose):</strong> Increases stamina and promotes weight loss.</li>
-            <li class="asana asana6"><strong>Pranayama (Breathing exercises):</strong> Reduces stress and helps with weight management.</li>
-        </ul>
-        """
-    
-    return render_template('personalized_chart.html', chart=chart)
+    # Define diet and exercise charts based on category
+    charts = {
+        "Underweight": {
+            "diet": [
+                "Increase calorie intake with nutrient-dense foods.",
+                "Include more proteins like eggs, chicken, fish, and legumes.",
+                "Consume healthy fats like avocado, nuts, seeds, and olive oil."
+            ],
+            "exercise": [
+                "Vrikshasana (Tree Pose): Helps improve balance and stability.",
+                "Bhujangasana (Cobra Pose): Strengthens the spine and reduces stress."
+            ]
+        },
+        "Overweight": {
+            "diet": [
+                "Focus on portion control and avoid overeating.",
+                "Include more fiber-rich foods like vegetables, fruits, and whole grains."
+            ],
+            "exercise": [
+                "Trikonasana (Triangle Pose): Reduces fat and strengthens muscles.",
+                "Surya Namaskar (Sun Salutation): Enhances metabolism and burns calories."
+            ]
+        },
+        "Obese": {
+            "diet": [
+                "Focus on a balanced, low-calorie diet with lean proteins and vegetables.",
+                "Limit processed foods, sugary drinks, and fried foods."
+            ],
+            "exercise": [
+                "Virabhadrasana (Warrior Pose): Increases stamina and promotes weight loss.",
+                "Pranayama (Breathing exercises): Reduces stress and helps with weight management."
+            ]
+        }
+    }
+
+    # Get the specific chart based on the category
+    chart = charts.get(category, None)
+
+    # Render the template and pass the chart and category data
+    return render_template('personalized_chart.html', chart=chart, category=category)
 
 if __name__ == '__main__':
     with app.app_context():  # Create application context
